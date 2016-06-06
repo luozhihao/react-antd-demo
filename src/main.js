@@ -24,19 +24,31 @@ import './main.css';
 
 // 引入单个页面（包括嵌套的子页面）
 import myTable from './components/table.js';
+import myForm from './components/form.js';
 
 // 配置导航
 class Sider extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            current: '1'
+            current: '1',
+            username: ''
         }
     }
 
     handleClick = (e) => {
         this.setState({
             current: e.key
+        })
+    }
+
+    componentDidMount() {
+        this.getUser()
+    }
+
+    getUser = () => {
+        this.setState({
+            username: 'luozh'
         })
     }
 
@@ -47,14 +59,14 @@ class Sider extends React.Component {
                     <img src='src/assets/images/logo.png' width="50" id="logo"/>
                     <Menu theme="dark"
                         onClick={this.handleClick}
-                        style={{ width: 240 }}
+                        style={{ width: 185 }}
                         defaultOpenKeys={['sub1']}
                         selectedKeys={[this.state.current]}
                         mode="inline"
                     >
                         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>导航一</span></span>}>
                             <Menu.Item key="1"><Link to="/myTable">表格</Link></Menu.Item>
-                            <Menu.Item key="2">选项2</Menu.Item>
+                            <Menu.Item key="2"><Link to="/myForm">表单</Link></Menu.Item>
                             <Menu.Item key="3">选项3</Menu.Item>
                             <Menu.Item key="4">选项4</Menu.Item>
                         </SubMenu>
@@ -75,18 +87,27 @@ class Sider extends React.Component {
                     </Menu>
                 </div>
                 <div id="rightWrap">
-                    { this.props.children }
+                    <Menu mode="horizontal">
+                        <SubMenu title={<span><Icon type="user" />{ this.state.username }</span>}>
+                            <Menu.Item key="setting:1">退出</Menu.Item>
+                        </SubMenu>
+                    </Menu>
+                    <div className="right-box">
+                        { this.props.children }
+                    </div>
                 </div>
             </div>
         )
     }
 }
 
+
 // 配置路由
 render((
     <Router history={hashHistory} >
         <Route path="/" component={Sider}>
             <Route path="myTable" component={myTable} />
+            <Route path="myForm" component={myForm} />
         </Route>
     </Router>
 ), document.getElementById('app'));
