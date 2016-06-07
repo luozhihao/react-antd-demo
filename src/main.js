@@ -25,6 +25,8 @@ import './main.css';
 // 引入单个页面（包括嵌套的子页面）
 import myTable from './components/table.js';
 import myForm from './components/form.js';
+import myChart from './components/chart.js';
+import myAnimate from './components/animate.js';
 
 // 配置导航
 class Sider extends React.Component {
@@ -67,22 +69,15 @@ class Sider extends React.Component {
                         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>导航一</span></span>}>
                             <Menu.Item key="1"><Link to="/myTable">表格</Link></Menu.Item>
                             <Menu.Item key="2"><Link to="/myForm">表单</Link></Menu.Item>
-                            <Menu.Item key="3">选项3</Menu.Item>
-                            <Menu.Item key="4">选项4</Menu.Item>
+                            <Menu.Item key="3"><Link to="/myChart">图表</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>导航二</span></span>}>
-                            <Menu.Item key="5">选项5</Menu.Item>
+                            <Menu.Item key="5"><Link to="/myAnimate">动画</Link></Menu.Item>
                             <Menu.Item key="6">选项6</Menu.Item>
                             <SubMenu key="sub3" title="三级导航">
                                 <Menu.Item key="7">选项7</Menu.Item>
                                 <Menu.Item key="8">选项8</Menu.Item>
                             </SubMenu>
-                        </SubMenu>
-                        <SubMenu key="sub4" title = {<span><Icon type="setting" /><span>导航三</span></span>}>
-                            <Menu.Item key="9">选项9</Menu.Item>
-                            <Menu.Item key="10">选项10</Menu.Item>
-                            <Menu.Item key="11">选项11</Menu.Item>
-                            <Menu.Item key="12">选项12</Menu.Item>
                         </SubMenu>
                     </Menu>
                 </div>
@@ -106,8 +101,11 @@ class Sider extends React.Component {
 render((
     <Router history={hashHistory} >
         <Route path="/" component={Sider}>
+            <IndexRoute path="myTable" component={myTable} />
             <Route path="myTable" component={myTable} />
             <Route path="myForm" component={myForm} />
+            <Route path="myChart" component={myChart} />
+            <Route path="myAnimate" component={myAnimate} />
         </Route>
     </Router>
 ), document.getElementById('app'));

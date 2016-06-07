@@ -58,3 +58,26 @@
 #rightWrap .ant-menu-submenu {
     float: right;
 }
+
+.chart-box {
+    margin-top: 30px;
+}
+
+.ege {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.ege a {
+    color: #009688;
+    font-size: 16px;
+}
+
+.lastPic {
+    display: block;
+    margin: 16% auto 0;
+}
+
+.ani-box {
+    text-align: center;
+}
