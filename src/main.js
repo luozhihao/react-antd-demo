@@ -16,17 +16,18 @@ import { Menu, Icon, Switch } from 'antd'
 const SubMenu = Menu.SubMenu
 
 // 引入Ant-Design样式 & Animate.CSS样式
-import 'animate.css/animate.min.css';
-import 'font-awesome/css/font-awesome.min.css';
+import 'animate.css/animate.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 // 引入主体样式文件
 import './main.css';
 
 // 引入单个页面（包括嵌套的子页面）
-import myTable from './components/table.js';
-import myForm from './components/form.js';
-import myChart from './components/chart.js';
-import myAnimate from './components/animate.js';
+import myTable from './components/table.js'
+import myForm from './components/form.js'
+import myChart from './components/chart.js'
+import myAnimate from './components/animate.js'
+import myCalendar from './components/calendar.js'
 
 // 配置导航
 class Sider extends React.Component {
@@ -72,8 +73,8 @@ class Sider extends React.Component {
                             <Menu.Item key="3"><Link to="/myChart">图表</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>导航二</span></span>}>
-                            <Menu.Item key="5"><Link to="/myAnimate">动画</Link></Menu.Item>
-                            <Menu.Item key="6">选项6</Menu.Item>
+                            <Menu.Item key="5"><Link to="/myCalendar">日历</Link></Menu.Item>
+                            <Menu.Item key="6"><Link to="/myAnimate">关注</Link></Menu.Item>
                             <SubMenu key="sub3" title="三级导航">
                                 <Menu.Item key="7">选项7</Menu.Item>
                                 <Menu.Item key="8">选项8</Menu.Item>
@@ -105,6 +106,7 @@ render((
             <Route path="myTable" component={myTable} />
             <Route path="myForm" component={myForm} />
             <Route path="myChart" component={myChart} />
+            <Route path="myCalendar" component={myCalendar} />
             <Route path="myAnimate" component={myAnimate} />
         </Route>
     </Router>
