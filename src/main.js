@@ -20,7 +20,7 @@ import 'animate.css/animate.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 // 引入主体样式文件
-import './main.css';
+import './main.css'
 
 // 引入单个页面（包括嵌套的子页面）
 import myTable from './components/table.js'

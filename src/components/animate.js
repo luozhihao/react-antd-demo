@@ -9,7 +9,7 @@ export default class myAnimate extends React.Component {
         return (
             <div className="ani-box">
                 <img src="./src/assets/images/face.jpg" width="100" className="animated fadeInUp lastPic" />
-                <span className="animated flipInX ege"><a href="http://www.cnblogs.com/luozhihao/" target="_blank">关注我</a></span>
+                <span className="animated flipInX ege">我的头像</span>
             </div>
         )
     }       
