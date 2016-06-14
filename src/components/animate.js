@@ -1,9 +1,9 @@
 import React from 'react'
 
-/*结尾组件*/
+// 结尾组件
 export default class myAnimate extends React.Component {
     constructor(props) {
-        super(props);    
+        super(props)   
     }
     render() {
         return (
